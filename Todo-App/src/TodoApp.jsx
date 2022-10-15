@@ -28,7 +28,7 @@ function App() {
 					<span className='text-rose-600 text-3xl'>#</span>to<span className='font-black text-rose-600 text-5xl'>do</span>_
 				</h2>
 			</header>
-
+   <p>probando editor mobile</p>
 			<main className='mt-20 w-full max-w-3xl'>
 				<div className='flex gap-32 justify-center items-center font-semibold border-b-[1px] border-slate-400 border-solid'>
 					{sections.map(section => {
