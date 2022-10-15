@@ -22,7 +22,7 @@ function App() {
 	}
 
   const onAddTodo = (inputValue) => {
-    setTodoList(inputValue, ...todoList)
+    setTodoList([{completed: false, todo: inputValue}, ...todoList])
   }
 
 	return (
@@ -46,7 +46,7 @@ function App() {
 						)
 					})} 
 				</div>
-				{section === 'Completed' ? '' : <AddTodo onAddTodo={onAddTodo()}/>}
+				{section === 'Completed' ? '' : <AddTodo onAddTodo={onAddTodo}/>}
 				<ul>
 					{section === 'All' && <All todoList={todoList} />}
 					{section === 'Active' && <Active todoList={todoList} />}
