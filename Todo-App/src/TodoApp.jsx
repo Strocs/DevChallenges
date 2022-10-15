@@ -21,6 +21,10 @@ function App() {
 		setSection(section)
 	}
 
+  const onAddTodo = (inputValue) => {
+    setTodoList(inputValue, ...todoList)
+  }
+
 	return (
 		<>
 			<header className='pt-5'>
@@ -42,7 +46,7 @@ function App() {
 						)
 					})} 
 				</div>
-				{section === 'Completed' ? '' : <AddTodo />}
+				{section === 'Completed' ? '' : <AddTodo onAddTodo={onAddTodo}/>}
 				<ul>
 					{section === 'All' && <All todoList={todoList} />}
 					{section === 'Active' && <Active todoList={todoList} />}
