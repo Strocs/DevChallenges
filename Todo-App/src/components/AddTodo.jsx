@@ -1,11 +1,12 @@
 import { useState } from 'react'
 
-export const AddTodo = () => {
+export const AddTodo = ({onAddTodo}) => {
 
   const [inputValue, setInputValue] = useState('')
 
 	const onSubmitTodo = e => {
 		e.preventDefault()
+    onAddTodo(inputValue)
     setInputValue('')
 	}
 
