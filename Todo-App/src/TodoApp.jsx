@@ -11,9 +11,7 @@ function App() {
 			completed: false,
 			todo: 'Do this Challenge',
 		},
-		{ completed: false, 
-      todo: 'Preparar las cosas para mañana' 
-    },
+		{ completed: true, todo: 'Preparar las cosas para mañana' },
 	])
 
 	const sections = ['All', 'Active', 'Completed']
@@ -45,9 +43,11 @@ function App() {
 					})}
 				</div>
 				{section === 'Completed' ? '' : <AddTodo />}
-				{section === 'All' && <All todoList={todoList} />}
-				{section === 'Active' && <Active />}
-				{section === 'Completed' && <Completed />}
+				<ul>
+					{section === 'All' && <All todoList={todoList} />}
+					{section === 'Active' && <Active todoList={todoList} />}
+					{section === 'Completed' && <Completed todoList={todoList}/>}
+				</ul>
 			</main>
 		</>
 	)

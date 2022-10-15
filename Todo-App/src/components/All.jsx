@@ -1,7 +1,6 @@
-import React from 'react'
 export const All = ( {todoList} ) => {
   return (
-    <ul>
+    <>
       {todoList.map(todoItem => {
         const {completed, todo } = todoItem
         return (
@@ -11,6 +10,6 @@ export const All = ( {todoList} ) => {
           </li>
         )
       })}
-    </ul>
+    </>
   )
 }
