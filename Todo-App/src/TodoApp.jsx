@@ -29,17 +29,18 @@ function App() {
 				</h2>
 			</header>
 			<main className='mt-20 w-full max-w-3xl'>
-				<div className='flex gap-32 justify-center items-center font-semibold border-b-[1px] border-slate-400 border-solid'>
+				<div className='flex gap-2 justify-center items-center font-semibold border-b-[1px] border-slate-400 border-solid'>
 					{sections.map(section => {
 						return (
-							<a key={section} onClick={e => onChangeSection(e, `${section}`)} className=' p-4 w-32 rounded-xl text-center relative group' href='/'>
+							<a key={section} onClick={e => onChangeSection(e, `${section}`)} className=' p-4 w-24 
+ rounded-xl text-center relative group' href='/'>
 								{' '}
 								<span className="after:content-[''] after:w-24 after:h-1 after:bg-rose-600 after:absolute after:bottom-0 after:left-0 after:right-0 after:m-auto after:rounded-t-3xl after:opacity-0 after:group-hover:opacity-100">
 									{section}
 								</span>
 							</a>
 						)
-					})}
+					})} 
 				</div>
 				{section === 'Completed' ? '' : <AddTodo />}
 				<ul>
