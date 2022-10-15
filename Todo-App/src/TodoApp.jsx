@@ -46,7 +46,7 @@ function App() {
 						)
 					})} 
 				</div>
-				{section === 'Completed' ? '' : <AddTodo onAddTodo={onAddTodo}/>}
+				{section === 'Completed' ? '' : <AddTodo onAddTodo={onAddTodo()}/>}
 				<ul>
 					{section === 'All' && <All todoList={todoList} />}
 					{section === 'Active' && <Active todoList={todoList} />}
