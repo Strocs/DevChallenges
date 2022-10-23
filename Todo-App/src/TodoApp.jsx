@@ -4,9 +4,9 @@ import { Button } from './components/Button.jsx'
 import { TodoItem } from './components/TodoItem'
 import { useTodo } from './hooks/useTodo.jsx'
 
-const SECTIONS = ['All', 'Active', 'Completed']
 
 function App() {
+	const SECTIONS = ['All', 'Active', 'Completed']
 	const [section, setSection] = useState('All')
 	const { todoList, onAddTodo, onRemoveTodo, onRemoveAllTodo, onSetCompleted } = useTodo()
 
@@ -53,7 +53,7 @@ function App() {
 				</ul>
 
 				{section === 'Completed' ? <Button name='Delete All' onClick={onRemoveAllTodo} /> : ''}
-				
+
 			</main>
 		</>
 	)

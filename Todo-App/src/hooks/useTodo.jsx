@@ -1,12 +1,18 @@
 import { useEffect, useState } from 'react'
 
 export const useTodo = () => {
-	const [todoList, setTodoList] = useState(JSON.parse(localStorage.getItem('todos')))
+	const [todoList, setTodoList] = useState([])
 
 	useEffect(() => {
 		localStorage.setItem('todos', JSON.stringify(todoList))
-	
 	}, [todoList])
+
+	useEffect(() => {
+		const todos = JSON.parse(localStorage.getItem('todos'))
+		if (todos) {
+			setTodoList(todos)
+		}
+	}, [])
 
 	const onAddTodo = inputValue => {
 		let newId
